@@ -1,0 +1,17 @@
+.notNav{
+    margin: 80px 80px;
+    display: flex;
+}
+
+.container{
+    margin: 80px 80px;
+}
+
+.card{
+    margin:10px 10px
+}
+ .Form{
+     border: 4px solid rgb(97, 97, 100);
+     padding: 30px 30px;
+     border-radius: 9px;
+ }
