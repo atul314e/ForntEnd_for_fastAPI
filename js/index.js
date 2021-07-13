@@ -56,6 +56,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             });
             const ele=document.querySelector(".notNav")
             ele.innerHTML=html
+        }).catch((err)=>{
+            window.open("../error/oops.html", "_self")
+            
+            console.log(err)
+            
         })
     }
     document.querySelector('.notNav').addEventListener('click', (event)=>{

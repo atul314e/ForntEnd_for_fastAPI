@@ -48,7 +48,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
                event.preventDefault()
            }
         }).catch((err)=>{
-            alert(err)
+            window.open("../error/oops.html", "_self")
+            
+            console.log(err)
+            
         })
     })
 })
