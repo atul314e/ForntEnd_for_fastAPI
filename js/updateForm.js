@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "department":document.getElementById('department').value,
             "organization":document.getElementById('organization').value,
             "location":document.getElementById('location').value,
-            "address":document.getElementById('address').value
+            "address":document.getElementById('address').value,
+            "description":document.getElementById('floatingTextarea').value
         } 
         let url=`http://127.0.0.1:8000/healthcare/${id}`
         let params={

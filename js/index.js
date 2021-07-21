@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             result.providers.forEach(element => {
                 getImage(element.providerID).then((responseBlob)=>{
                    console.log(element)
-                    html=`<div class="card" style="width: 25rem;">
+                    html=`<div class="card" style="width: 24rem;">
                     <img src="${responseBlob}" class="card-img-top" alt="...">
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item"><b>Name:</b>    ${element.name}</li>

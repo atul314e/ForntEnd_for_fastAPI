@@ -17,11 +17,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
     const submitBtn=document.getElementById("submit")
 
     submitBtn.addEventListener('click', (event)=>{
-       // event.preventDefault()
+        //event.preventDefault()
         const url='http://127.0.0.1:8000/healthcare'
         const urlImg='http://127.0.0.1:8000/uploadimage'
-        const filename=document.getElementById('inputGroupFile01').files.length!=0?document.getElementById('inputGroupFile01').files[0].name:"default.jpeg"
-        console.log(document.getElementById('inputGroupFile01').files)
+        //const filename=document.getElementById('inputGroupFile01').files.length!=0?document.getElementById('inputGroupFile01').files[0].name:"default.jpeg"
+        const filename='default.jpeg'
+        //console.log(document.getElementById('inputGroupFile01').files)
         const data={
             "active":document.getElementById('active').checked,
             "name":document.getElementById('name').value,
@@ -41,13 +42,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
             headers:{'Content-Type':'application/json', 'Accept':'application/json'},
             body:JSON.stringify(data)
         }
-
+/*
         const imgParam={
             method:'POST',
             headers:{'Content-Type':'image/jpeg', 'Accept':'image/jpeg'},
             body:document.getElementById('inputGroupFile01').files[0]
         }
-
+*/
         postData(url, param).then((data)=>{
             console.log(filename)
             /*
@@ -63,7 +64,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             ele.innerHTML=html
             */
            if(data.message!="data has been added"){   
-               event.preventDefault()
+            event.preventDefault()
            }
            else{
                if(filename!='default.jpeg'){
