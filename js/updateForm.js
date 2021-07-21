@@ -53,46 +53,50 @@ document.addEventListener("DOMContentLoaded", (event) => {
             console.log(result.providers)
             let html=``
             html+=`<form class="Form">
-                <div class="mb-3">
-                <label for="ID">ID</label>
+                <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="ID" value="${result.providers.providerID}" placeholder="Enter name" disabled>
+                <label for="ID">ID</label>
                 </div>            
-                <div class="mb-3">
-                  <label for="name">Name</label>
+                <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="name" value="${result.providers.name}" placeholder="Enter name">
+                  <label for="name">Name</label>
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="active" checked>
                     <label class="form-check-label" for="active">Active</label>
                   </div>
-                <div class="mb-3">
-                  <label for="qualification">Qualification</label>
+                <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="qualification" value="${result.providers.qualification}" placeholder="qualification">
+                  <label for="qualification">Qualification</label>
                 </div>
-                <div class="mb-3">
-                    <label for="speciality">Speciality</label>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="speciality" value="${result.providers.speciality}" placeholder="speciality">
+                    <label for="speciality">Speciality</label>
                 </div>
-                <div class="mb-3">
-                    <label for="phone">Phone</label>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="phone" value="${result.providers.phone}" placeholder="phone">
+                    <label for="phone">Phone</label>
                 </div>
-                <div class="mb-3">
-                    <label for="department">Department</label>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="department" value="${result.providers.department}" placeholder="department">
+                    <label for="department">Department</label>
                 </div>
-                <div class="mb-3">
-                    <label for="organization">Organization</label>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="organization" value="${result.providers.organization}" placeholder="organization">
+                    <label for="organization">Organization</label>
                 </div>
-                <div class="mb-3">
-                    <label for="location">Location</label>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="location" value="${result.providers.location}" placeholder="location">
+                    <label for="location">Location</label>
                 </div>
-                <div class="mb-3">
-                    <label for="address">Address</label>
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="address" value="${result.providers.address}" placeholder="address">
+                    <label for="address">Address</label>
                 </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Add Description" id="floatingTextarea">${result.providers.description}</textarea>
+                    <label for="floatingTextarea">Description</label>
+              </div>
                 <button type="submit" id="submit" class="btn btn-primary">Update</button>
               </form>`
             const ele=document.querySelector(".FORM")

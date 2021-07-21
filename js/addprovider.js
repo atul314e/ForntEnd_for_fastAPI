@@ -5,12 +5,23 @@ window.addEventListener("DOMContentLoaded", ()=>{
         const response=await promise.json()
         return response
     }
+    
+    async function postImage(urlImg, imgParam){
+        console.log("inside")
+        const promise=await fetch(urlImg, imgParam)
+        const response=await promise.json()
+        console.log(response)
+        return response
+    }
 
     const submitBtn=document.getElementById("submit")
 
     submitBtn.addEventListener('click', (event)=>{
+       // event.preventDefault()
         const url='http://127.0.0.1:8000/healthcare'
-
+        const urlImg='http://127.0.0.1:8000/uploadimage'
+        const filename=document.getElementById('inputGroupFile01').files.length!=0?document.getElementById('inputGroupFile01').files[0].name:"default.jpeg"
+        console.log(document.getElementById('inputGroupFile01').files)
         const data={
             "active":document.getElementById('active').checked,
             "name":document.getElementById('name').value,
@@ -20,7 +31,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
             "department":document.getElementById('department').value,
             "organization":document.getElementById('organization').value,
             "location":document.getElementById('location').value,
-            "address":document.getElementById('address').value
+            "address":document.getElementById('address').value,
+            "image":filename,
+            "description":document.getElementById('floatingTextarea').value
         }
 
         const param={
@@ -29,8 +42,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
             body:JSON.stringify(data)
         }
 
-        
+        const imgParam={
+            method:'POST',
+            headers:{'Content-Type':'image/jpeg', 'Accept':'image/jpeg'},
+            body:document.getElementById('inputGroupFile01').files[0]
+        }
+
         postData(url, param).then((data)=>{
+            console.log(filename)
             /*
             const ele=document.querySelector('.toaster')
             const html=`<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
@@ -43,10 +62,17 @@ window.addEventListener("DOMContentLoaded", ()=>{
           </div>`
             ele.innerHTML=html
             */
-           alert(data.message)
-           if(data.message!="data has been added"){
+           if(data.message!="data has been added"){   
                event.preventDefault()
            }
+           else{
+               if(filename!='default.jpeg'){
+                    postImage(urlImg, imgParam).then((data)=>{
+                        console.log(urlImg)
+                    })
+               }
+           }
+           alert(data.message)
         }).catch((err)=>{
             window.open("../error/oops.html", "_self")
             

@@ -1,0 +1,60 @@
+.content{
+    margin-top: 100px;
+}
+
+.sec{
+    display: table;
+    
+    margin-left: 40px;
+    width:50%;
+    border: 1px solid blue;
+}
+
+.right{
+    border: 1px solid blue;
+}
+
+.desc{
+    justify-content: center;
+}
+
+.image{
+    border-radius: 50%;
+    height: 70%;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card{
+    border: none;
+}
+
+.LIST{
+    align-content: center;
+}
+
+.list-group-flush>.list-group-item {
+    border-width: 0 0 0px;
+}
+
+.des{
+    text-align: justify;
+}
+/*
+.rotateY:hover {
+	transform: rotateY(360deg);
+	-moz-transform: rotateY(360deg);
+	-webkit-transform: rotateY(360deg);
+	transform-origin: center;
+	-moz-transform-origin: center;
+	-webkit-transform-origin: center;
+	transition: 2.0s ease;
+	-moz-transition: 2.0s ease;
+	-webkit-transition: 2.0s ease;
+}
+*/
+.rotateY:hover{
+    transform: rotateY(360deg);
+    transform-origin: center;
+    transition: 2.0s ease;
+}
